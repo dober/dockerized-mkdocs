@@ -1,0 +1,10 @@
+---
+version: '3'
+services:
+  webdav:
+    image: ghcr.io/dober/mkdocs:latest
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - /data/mkdocs/articles:/articles
+    restart: always
