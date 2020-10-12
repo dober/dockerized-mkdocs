@@ -6,5 +6,5 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
-      - /data/mkdocs/articles:/articles
+      - ./mkdocs:/mkdocs
     restart: always
