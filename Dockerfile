@@ -1,12 +1,8 @@
 FROM python:3.8-alpine3.12
 
+COPY requirements.txt /tmp/requirements.txt
 RUN apk add --no-cache --virtual .build-deps gcc g++ musl-dev \
-    &&  pip install --no-cache-dir mkdocs \ 
-                                   mkdocs-autolinks-plugin \
-                                   mkdocs-material \
-                                   mkdocs-nav-enhancements \
-                                   mkdocs-redirects \
-                                   mkdocs-table-reader-plugin \
+    &&  pip install --no-cache-dir -r /tmp/requirements.txt
     && apk del .build-deps \
     && rm -rf /tmp/*
 
