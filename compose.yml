@@ -1,18 +1,11 @@
-## MkDocs
-
-Dockerized MkDocs with material theme.
-
-### Docker/Podman compose:
-
-```yaml
 ---
 services:
   mkdocs:
-    image: ghcr.io/dober/mkdocs:latest
+    #image: ghcr.io/dober/mkdocs:latest
+    image: db9e670eb7be4aec6058d89c809b2014a83aeda1a18cf4ad06485d120435b306
     container_name: mkdocs
     ports:
       - "127.0.0.1:8000:8000"
     volumes:
       - ./mkdocs:/mkdocs
     restart: unless-stopped
-```
